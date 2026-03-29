@@ -1,0 +1,22 @@
+{
+    "name": "bugzy-whatsapp-backend",
+    "version": "1.0.0",
+    "description": "WhatsApp WebRTC-to-LiveKit bridge for Bugzy voice calling",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node --watch server.js"
+    },
+    "dependencies": {
+        "@roamhq/wrtc": "^0.9.1",
+        "axios": "^1.6.0",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.0",
+        "livekit-server-sdk": "^2.15.0",
+        "web-streams-polyfill": "^3.3.2",
+        "ws": "^8.14.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

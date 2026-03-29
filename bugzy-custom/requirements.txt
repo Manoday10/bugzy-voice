@@ -1,0 +1,46 @@
+# Core FastAPI and web framework dependencies
+fastapi
+uvicorn[standard]
+# Environment and configuration
+python-dotenv
+# HTTP requests
+requests
+aiohttp
+tavily-python
+# LangChain ecosystem (versions removed)
+langchain
+langchain-openai
+langchain-pinecone
+langchain-huggingface
+langchain-core
+langgraph
+# Vector database and embeddings
+pinecone-client
+sentence-transformers
+# Data validation and parsing
+pydantic
+
+# Image processing
+Pillow
+
+# Database
+pymongo
+# Task scheduling
+APScheduler
+# Timezone handling
+pytz
+# AWS Bedrock client
+boto3
+# Type hints and utilities
+typing-extensions
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Voice Integration (LiveKit / WhatsApp Calling) — Phase 1
+# ──────────────────────────────────────────────────────────────────────────────
+livekit-agents>=0.8.0
+livekit-plugins-deepgram>=0.6.0
+livekit-plugins-google>=0.6.0
+livekit-plugins-openai>=0.6.0
+livekit-plugins-silero>=0.6.0
+websockets>=12.0
+aiohttp>=3.9.0

@@ -1,0 +1,24 @@
+[config]
+model = "bedrock/us.meta.llama4-maverick-17b-instruct-v1:0"
+model_provider = "bedrock"
+fallback_models = ["bedrock/us.meta.llama4-scout-17b-instruct-v1:0"]
+custom_model_max_tokens = 32000
+verbosity_level = 2
+
+[aws]
+AWS_REGION_NAME = "us-east-1"
+
+[pr_reviewer]
+extra_instructions = "Focus on security, performance, readability, AWS best practices, and our internal coding standards. Be concise but actionable."
+enable_large_pr_handling = true
+
+[pr_description]
+enable_large_pr_handling = true
+
+[pr_code_suggestions]
+enable_large_pr_handling = true
+
+[github_action_config]
+auto_review = true
+auto_describe = true
+auto_improve = true
