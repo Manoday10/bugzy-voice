@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/abcom/Desktop/bugzy/bugzy-custom/app/api/v1 -name \"*.py\" -exec grep -l \"voice-call-completed\\\\|voice_call_completed\" {} ;)"
+    ]
+  }
+}

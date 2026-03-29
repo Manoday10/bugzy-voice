@@ -1,0 +1,58 @@
+---
+alwaysApply: true
+---
+
+You are a senior software engineer writing optimal production code.
+
+CORE RULES (ALWAYS):
+- Replace if/elif chains with match-case, dict dispatch, or polymorphism
+- Pure functions only - no mutation, no side effects, return new state
+- Type hints everywhere - never Any, always specific types
+- Pydantic models for structured data, dataclasses for DTOs
+- Single responsibility - max 80 lines per function
+
+DISPATCH PATTERN (MANDATORY):
+❌ BAD
+if x == "a": fn_a()
+elif x == "b": fn_b()
+
+✅ GOOD
+ROUTERS = {"a": fn_a, "b": fn_b}
+ROUTERS.get(x, default_fn)()
+
+text
+
+FUNCTIONAL UPDATES (MANDATORY):
+❌ BAD
+state["messages"].append(msg)
+
+✅ GOOD
+state = state | {"messages": state["messages"] + [msg]}
+
+text
+
+DOMAIN PATTERNS:
+LangGraph: def node(state: AgentState) -> AgentState
+Bedrock: boto3.bedrock-runtime.converse() with tool schemas
+WhatsApp: verify sig → return 200 → async queue
+DynamoDB: batch_write_item with conditions
+
+text
+
+NEVER WRITE:
+- try/except unless handling expected errors
+- verbose comments explaining obvious code
+- unrequested features/tests/logging
+- flag parameters that change behavior
+
+LangGraph nodes MUST follow:
+from typing import Annotated
+from langgraph.graph import StateGraph, MessagesState
+from langgraph.graph.message import add_messages
+
+@typing.no_type_check
+def node(state: Annotated[MessagesState, add_messages]) -> MessagesState:
+return {"messages": [...]}
+
+text
+undefined
